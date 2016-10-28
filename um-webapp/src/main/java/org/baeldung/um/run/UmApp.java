@@ -19,7 +19,6 @@ import org.springframework.boot.context.web.SpringBootServletInitializer;
 public class UmApp extends SpringBootServletInitializer {
 
     private final static Object[] CONFIGS = { // @formatter:off
-            UmApp.class,
             UmContextConfig.class,
 
             UmPersistenceJpaConfig.class,

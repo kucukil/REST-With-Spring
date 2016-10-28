@@ -13,6 +13,7 @@ import org.baeldung.um.spring.CommonTestConfig;
 import org.baeldung.um.spring.UmClientConfig;
 import org.baeldung.um.spring.UmLiveTestConfig;
 import org.baeldung.um.util.Um;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,7 @@ import com.jayway.restassured.specification.RequestSpecification;
 @ActiveProfiles({ CLIENT, TEST })
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = { UmLiveTestConfig.class, UmClientConfig.class, CommonTestConfig.class }, loader = AnnotationConfigContextLoader.class)
+@Ignore("no security configuration exist")
 public class SecurityRestLiveTest {
 
     @Autowired
