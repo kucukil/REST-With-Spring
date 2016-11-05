@@ -240,8 +240,9 @@ public class RoleSimpleLiveTest {
         assertNotNull(response.getHeader(HttpHeaders.LOCATION));
     }
 
+    // not a conflict - it is a bad request due to constraint violation
     @Test
-    public final void givenResourceExists_whenResourceWithSameAttributesIsCreated_then409IsReceived() {
+    public final void givenResourceExists_whenResourceWithSameAttributesIsCreated_then400IsReceived() {
         // Given
         final Role newResource = createNewResource();
         getApi().createAsResponse(newResource);
@@ -250,7 +251,7 @@ public class RoleSimpleLiveTest {
         final Response response = getApi().createAsResponse(newResource);
 
         // Then
-        assertThat(response.getStatusCode(), is(409));
+        assertThat(response.getStatusCode(), is(400));
     }
 
     // update
